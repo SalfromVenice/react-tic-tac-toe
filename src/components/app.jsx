@@ -48,7 +48,7 @@ class App extends React.Component {
       const desc = move ? `Go to move # ${move}` : 'Go to game start';
       return (
         <ul>
-          <li key={move}>
+          <li key={step}>
             <button type="button" className="btn btn-primary" onClick={() => this.jumpTo(move)}>{desc}</button>
           </li>
         </ul>
@@ -69,6 +69,7 @@ class App extends React.Component {
       <div className="game">
         <div className="game-board">
           <Board
+            color={color}
             squares={current.squares}
             onClick={i => this.handleClick(i)}
           />

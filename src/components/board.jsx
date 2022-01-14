@@ -2,10 +2,11 @@ import React from "react";
 
 import Square from "./square";
 
-const Board = ({ squares, onClick, status }) => {
+const Board = ({ squares, onClick, status, color }) => {
   const renderSquare = (i) => {
     return (
       <Square
+        color={color}
         value={squares[i]}
         onClick={() => onClick(i)}
       />
