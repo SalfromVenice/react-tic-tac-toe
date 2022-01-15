@@ -66,19 +66,24 @@ class App extends React.Component {
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            color={color}
-            squares={current.squares}
-            onClick={i => this.handleClick(i)}
-          />
+      <>
+        <div className="game">
+          <div className="game-board">
+            <h1>React Tic-Tac-Toe</h1>
+            <br />
+            <Board
+              color={color}
+              squares={current.squares}
+              onClick={i => this.handleClick(i)}
+            />
+          </div>
+          <div className="game-info">
+            <div><h3 className={color}>{status}</h3></div>
+            <br />
+            <ol>{moves}</ol>
+          </div>
         </div>
-        <div className="game-info">
-          <div><h3 className={color}>{status}</h3></div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
+      </>
     );
   }
 }
